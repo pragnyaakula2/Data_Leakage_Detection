@@ -1,0 +1,634 @@
+{
+  "dataset": "Rossmann",
+  "source": "/Users/pragnyaakula/Downloads/ADA_mini_project /data/raw/rossmann_train.csv; /Users/pragnyaakula/Downloads/ADA_mini_project /data/raw/rossmann_store.csv",
+  "split_sizes": {
+    "train": 30000,
+    "validation": 8000,
+    "test": 10000
+  },
+  "n_features": 17,
+  "feature_names": [
+    "Store",
+    "DayOfWeek",
+    "Promo",
+    "SchoolHoliday",
+    "Year",
+    "Month",
+    "Day",
+    "WeekOfYear",
+    "CompetitionDistance",
+    "CompetitionOpenMonths",
+    "Promo2",
+    "Promo2Weeks",
+    "PromoMonthActive",
+    "StateHoliday_freq",
+    "StoreType_freq",
+    "Assortment_freq",
+    "PromoInterval_freq"
+  ],
+  "detector_config": {
+    "target": {
+      "mi_subsample": 20000,
+      "top_k": 5,
+      "permutation_rows": 4000,
+      "permutation_repeats": 3,
+      "permutation_seed_offset": 17,
+      "surrogate_rows": 20000,
+      "threshold": 0.65,
+      "seed_offset": 0,
+      "surrogate_early_stopping": null
+    },
+    "contamination": {
+      "threshold": 0.5,
+      "decimals": 6,
+      "near_duplicate_quantile": 0.05,
+      "exact_excess_scale": 0.02,
+      "near_excess_scale": 0.05,
+      "significance_level": 0.01
+    },
+    "temporal": {
+      "threshold": 0.5,
+      "overlap_scale": 0.05,
+      "auc_delta_scale": 0.05,
+      "overlap_weight": 0.7,
+      "auc_delta_weight": 0.3,
+      "max_probe_rows": 20000,
+      "seed": 0
+    },
+    "preprocessing": {
+      "threshold": 0.5,
+      "tolerance": 1e-07,
+      "scaler_min_unique": 20,
+      "frequency_max_unique": 10
+    }
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "model": "rf",
+      "test_auc": 0.8896869189777391,
+      "test_average_precision": 0.9189033333080416,
+      "jackfruit": {
+        "target": {
+          "score": 0.510205702171089,
+          "flag": false,
+          "evidence": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "Promo",
+                "mi": 0.2246411837778528,
+                "mi_z": 2527.116358332294,
+                "single_feature_strength": 0.8000734807167793,
+                "ablation_drop": 0.0086450031412314,
+                "permutation_share": 0.7187522986872114,
+                "score": 0.510205702171089
+              },
+              {
+                "feature": "DayOfWeek",
+                "mi": 0.028528930522909356,
+                "mi_z": 320.3493294761917,
+                "single_feature_strength": 0.6293878474702548,
+                "ablation_drop": 0.01571135202643037,
+                "permutation_share": 0.09051020704137938,
+                "score": 0.41284540810572146
+              },
+              {
+                "feature": "Day",
+                "mi": 0.03669942588649033,
+                "mi_z": 412.28840762411795,
+                "single_feature_strength": 0.6670591439836179,
+                "ablation_drop": 0.0035290067994514507,
+                "permutation_share": 0.05061833960819345,
+                "score": 0.3641160271978058
+              },
+              {
+                "feature": "Promo2Weeks",
+                "mi": 0.023088543968792008,
+                "mi_z": 259.1309941983291,
+                "single_feature_strength": 0.5281044160969811,
+                "ablation_drop": 0.0016868320118170743,
+                "permutation_share": 0.0025636236012088896,
+                "score": 0.3567473280472683
+              },
+              {
+                "feature": "WeekOfYear",
+                "mi": 0.15513435424869537,
+                "mi_z": 1744.9858328833448,
+                "single_feature_strength": 0.6474956105695628,
+                "ablation_drop": 0.0012528270079948944,
+                "permutation_share": 0.043345728357533635,
+                "score": 0.35501130803197956
+              },
+              {
+                "feature": "Month",
+                "mi": 0.01680850859383254,
+                "mi_z": 188.46445105533357,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.029112953283714462,
+                "score": 0.35
+              },
+              {
+                "feature": "CompetitionDistance",
+                "mi": 0.0023192669837430735,
+                "mi_z": 25.42323293874272,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.014381631386289605,
+                "score": 0.24591538591786777
+              },
+              {
+                "feature": "Store",
+                "mi": 0.0,
+                "mi_z": -0.6744831697215209,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0011882980142822205,
+                "score": 0.0
+              },
+              {
+                "feature": "SchoolHoliday",
+                "mi": 4.66538765138691e-05,
+                "mi_z": -0.14950711773923497,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.005886147545262895,
+                "score": 0.0
+              },
+              {
+                "feature": "Year",
+                "mi": 1.8664308423677056e-05,
+                "mi_z": -0.46446171638464984,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "CompetitionOpenMonths",
+                "mi": 0.0,
+                "mi_z": -0.6744831697215209,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00505716987370999,
+                "score": 0.0
+              },
+              {
+                "feature": "Promo2",
+                "mi": 7.635933846616982e-06,
+                "mi_z": -0.5885592829293225,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0019264304070634162,
+                "score": 0.0
+              },
+              {
+                "feature": "PromoMonthActive",
+                "mi": 5.99403618356531e-05,
+                "mi_z": 0.0,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00035897227652697666,
+                "score": 0.0
+              },
+              {
+                "feature": "StateHoliday_freq",
+                "mi": 0.00013811395062413934,
+                "mi_z": 0.8796538482555932,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 2.552485482729347e-05,
+                "score": 0.0
+              },
+              {
+                "feature": "StoreType_freq",
+                "mi": 3.0526861469044875e-05,
+                "mi_z": -0.3309774975044388,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.028806422981651137,
+                "score": 0.0
+              },
+              {
+                "feature": "Assortment_freq",
+                "mi": 1.0203803485719226e-05,
+                "mi_z": -0.559664147822161,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00655942360236884,
+                "score": 0.0
+              },
+              {
+                "feature": "PromoInterval_freq",
+                "mi": 1.1422744066014179e-05,
+                "mi_z": -0.5459479325521607,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0009068284787765317,
+                "score": 0.0
+              }
+            ]
+          },
+          "signals": {
+            "mi_z_max": 2527.116358332294,
+            "single_feature_strength_max": 0.8000734807167793,
+            "ablation_drop_max": 0.01571135202643037,
+            "permutation_share_max": 0.7187522986872114
+          }
+        },
+        "contamination": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0,
+            "exact_train_baseline": 0.0,
+            "exact_excess": 0.0,
+            "exact_p_value": 1.0,
+            "near_excess": 0.0,
+            "near_p_value": 1.0,
+            "near_distance_threshold": 0.25070820226897583
+          },
+          "signals": {
+            "exact_score": 0.0,
+            "near_score": 0.0,
+            "memorization_gap": 0.0,
+            "memorization_score": 0.0
+          }
+        },
+        "temporal": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "train_at_or_after_test_start_fraction": 0.0,
+            "train_after_test_end_fraction": 0.0,
+            "test_start": 1.413936e+18,
+            "test_end": 1.4261184e+18,
+            "auc_given_split": null,
+            "auc_chronological": null,
+            "auc_delta": 0.0
+          },
+          "signals": {
+            "overlap_fraction": 0.0,
+            "future_fraction": 0.0,
+            "chronological_auc_delta": 0.0
+          }
+        },
+        "preprocessing": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "scaler": {
+              "Store": "train-consistent",
+              "Day": "train-consistent",
+              "WeekOfYear": "train-consistent",
+              "CompetitionDistance": "train-consistent",
+              "CompetitionOpenMonths": "train-consistent",
+              "Promo2Weeks": "train-consistent"
+            },
+            "imputation": {
+              "DayOfWeek": {
+                "spike_share": 0.17336666666666667,
+                "verdict": "neither"
+              },
+              "Promo": {
+                "spike_share": 0.5701,
+                "verdict": "neither"
+              },
+              "Year": {
+                "spike_share": 0.7073,
+                "verdict": "neither"
+              },
+              "Month": {
+                "spike_share": 0.1215,
+                "verdict": "neither"
+              },
+              "Day": {
+                "spike_share": 0.03613333333333334,
+                "verdict": "neither"
+              },
+              "WeekOfYear": {
+                "spike_share": 0.02896666666666667,
+                "verdict": "neither"
+              },
+              "CompetitionDistance": {
+                "spike_share": 0.010566666666666667,
+                "verdict": "neither"
+              },
+              "CompetitionOpenMonths": {
+                "spike_share": 0.3176333333333333,
+                "verdict": "train-consistent"
+              },
+              "Promo2": {
+                "spike_share": 0.5069,
+                "verdict": "neither"
+              },
+              "Promo2Weeks": {
+                "spike_share": 0.4931,
+                "verdict": "train-consistent"
+              },
+              "StoreType_freq": {
+                "spike_share": 0.5396333333333333,
+                "verdict": "neither"
+              },
+              "Assortment_freq": {
+                "spike_share": 0.5312333333333333,
+                "verdict": "neither"
+              },
+              "PromoInterval_freq": {
+                "spike_share": 0.4931,
+                "verdict": "neither"
+              }
+            },
+            "encoding": {
+              "StateHoliday_freq": "train-consistent",
+              "StoreType_freq": "train-consistent",
+              "Assortment_freq": "train-consistent",
+              "PromoInterval_freq": "train-consistent"
+            }
+          },
+          "signals": {
+            "scaler_fingerprint": 0.0,
+            "imputation_fingerprint": 0.0,
+            "encoding_fingerprint": 0.0
+          }
+        },
+        "model_signals": {
+          "train_auc": 0.9882082204325068,
+          "test_auc": 0.889686918977739,
+          "train_test_auc_gap": 0.09852130145476778,
+          "train_test_confidence_gap": 0.044795575507394325
+        },
+        "verdict": "clean",
+        "scores": {
+          "target": 0.510205702171089,
+          "contamination": 0.0,
+          "temporal": 0.0,
+          "preprocessing": 0.0
+        },
+        "flags": {
+          "target": false,
+          "contamination": false,
+          "temporal": false,
+          "preprocessing": false
+        },
+        "evidence": {
+          "target": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "Promo",
+                "mi": 0.2246411837778528,
+                "mi_z": 2527.116358332294,
+                "single_feature_strength": 0.8000734807167793,
+                "ablation_drop": 0.0086450031412314,
+                "permutation_share": 0.7187522986872114,
+                "score": 0.510205702171089
+              },
+              {
+                "feature": "DayOfWeek",
+                "mi": 0.028528930522909356,
+                "mi_z": 320.3493294761917,
+                "single_feature_strength": 0.6293878474702548,
+                "ablation_drop": 0.01571135202643037,
+                "permutation_share": 0.09051020704137938,
+                "score": 0.41284540810572146
+              },
+              {
+                "feature": "Day",
+                "mi": 0.03669942588649033,
+                "mi_z": 412.28840762411795,
+                "single_feature_strength": 0.6670591439836179,
+                "ablation_drop": 0.0035290067994514507,
+                "permutation_share": 0.05061833960819345,
+                "score": 0.3641160271978058
+              },
+              {
+                "feature": "Promo2Weeks",
+                "mi": 0.023088543968792008,
+                "mi_z": 259.1309941983291,
+                "single_feature_strength": 0.5281044160969811,
+                "ablation_drop": 0.0016868320118170743,
+                "permutation_share": 0.0025636236012088896,
+                "score": 0.3567473280472683
+              },
+              {
+                "feature": "WeekOfYear",
+                "mi": 0.15513435424869537,
+                "mi_z": 1744.9858328833448,
+                "single_feature_strength": 0.6474956105695628,
+                "ablation_drop": 0.0012528270079948944,
+                "permutation_share": 0.043345728357533635,
+                "score": 0.35501130803197956
+              },
+              {
+                "feature": "Month",
+                "mi": 0.01680850859383254,
+                "mi_z": 188.46445105533357,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.029112953283714462,
+                "score": 0.35
+              },
+              {
+                "feature": "CompetitionDistance",
+                "mi": 0.0023192669837430735,
+                "mi_z": 25.42323293874272,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.014381631386289605,
+                "score": 0.24591538591786777
+              },
+              {
+                "feature": "Store",
+                "mi": 0.0,
+                "mi_z": -0.6744831697215209,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0011882980142822205,
+                "score": 0.0
+              },
+              {
+                "feature": "SchoolHoliday",
+                "mi": 4.66538765138691e-05,
+                "mi_z": -0.14950711773923497,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.005886147545262895,
+                "score": 0.0
+              },
+              {
+                "feature": "Year",
+                "mi": 1.8664308423677056e-05,
+                "mi_z": -0.46446171638464984,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "CompetitionOpenMonths",
+                "mi": 0.0,
+                "mi_z": -0.6744831697215209,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00505716987370999,
+                "score": 0.0
+              },
+              {
+                "feature": "Promo2",
+                "mi": 7.635933846616982e-06,
+                "mi_z": -0.5885592829293225,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0019264304070634162,
+                "score": 0.0
+              },
+              {
+                "feature": "PromoMonthActive",
+                "mi": 5.99403618356531e-05,
+                "mi_z": 0.0,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00035897227652697666,
+                "score": 0.0
+              },
+              {
+                "feature": "StateHoliday_freq",
+                "mi": 0.00013811395062413934,
+                "mi_z": 0.8796538482555932,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 2.552485482729347e-05,
+                "score": 0.0
+              },
+              {
+                "feature": "StoreType_freq",
+                "mi": 3.0526861469044875e-05,
+                "mi_z": -0.3309774975044388,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.028806422981651137,
+                "score": 0.0
+              },
+              {
+                "feature": "Assortment_freq",
+                "mi": 1.0203803485719226e-05,
+                "mi_z": -0.559664147822161,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00655942360236884,
+                "score": 0.0
+              },
+              {
+                "feature": "PromoInterval_freq",
+                "mi": 1.1422744066014179e-05,
+                "mi_z": -0.5459479325521607,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0009068284787765317,
+                "score": 0.0
+              }
+            ]
+          },
+          "contamination": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0,
+            "exact_train_baseline": 0.0,
+            "exact_excess": 0.0,
+            "exact_p_value": 1.0,
+            "near_excess": 0.0,
+            "near_p_value": 1.0,
+            "near_distance_threshold": 0.25070820226897583
+          },
+          "temporal": {
+            "train_at_or_after_test_start_fraction": 0.0,
+            "train_after_test_end_fraction": 0.0,
+            "test_start": 1.413936e+18,
+            "test_end": 1.4261184e+18,
+            "auc_given_split": null,
+            "auc_chronological": null,
+            "auc_delta": 0.0
+          },
+          "preprocessing": {
+            "scaler": {
+              "Store": "train-consistent",
+              "Day": "train-consistent",
+              "WeekOfYear": "train-consistent",
+              "CompetitionDistance": "train-consistent",
+              "CompetitionOpenMonths": "train-consistent",
+              "Promo2Weeks": "train-consistent"
+            },
+            "imputation": {
+              "DayOfWeek": {
+                "spike_share": 0.17336666666666667,
+                "verdict": "neither"
+              },
+              "Promo": {
+                "spike_share": 0.5701,
+                "verdict": "neither"
+              },
+              "Year": {
+                "spike_share": 0.7073,
+                "verdict": "neither"
+              },
+              "Month": {
+                "spike_share": 0.1215,
+                "verdict": "neither"
+              },
+              "Day": {
+                "spike_share": 0.03613333333333334,
+                "verdict": "neither"
+              },
+              "WeekOfYear": {
+                "spike_share": 0.02896666666666667,
+                "verdict": "neither"
+              },
+              "CompetitionDistance": {
+                "spike_share": 0.010566666666666667,
+                "verdict": "neither"
+              },
+              "CompetitionOpenMonths": {
+                "spike_share": 0.3176333333333333,
+                "verdict": "train-consistent"
+              },
+              "Promo2": {
+                "spike_share": 0.5069,
+                "verdict": "neither"
+              },
+              "Promo2Weeks": {
+                "spike_share": 0.4931,
+                "verdict": "train-consistent"
+              },
+              "StoreType_freq": {
+                "spike_share": 0.5396333333333333,
+                "verdict": "neither"
+              },
+              "Assortment_freq": {
+                "spike_share": 0.5312333333333333,
+                "verdict": "neither"
+              },
+              "PromoInterval_freq": {
+                "spike_share": 0.4931,
+                "verdict": "neither"
+              }
+            },
+            "encoding": {
+              "StateHoliday_freq": "train-consistent",
+              "StoreType_freq": "train-consistent",
+              "Assortment_freq": "train-consistent",
+              "PromoInterval_freq": "train-consistent"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

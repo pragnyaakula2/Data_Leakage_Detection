@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ada-leakage-detection"
+version = "0.1.0"
+description = "Reusable data leakage detection utilities for four ADA project datasets"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "scikit-learn>=1.2",
+    "pandas>=2.0"
+]
+
+[project.optional-dependencies]
+xgboost = ["xgboost>=2.0"]
+[tool.setuptools.packages.find]
+include = ["leakage_detection*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

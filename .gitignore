@@ -1,0 +1,26 @@
+cat > .gitignore <<'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Downloaded datasets and caches
+data/raw/*
+data/processed/*
+*.pkz
+
+# Local environment
+.env
+.env.*
+
+# Temporary files
+*.log
+.ipynb_checkpoints/
+EOF
+*.zip

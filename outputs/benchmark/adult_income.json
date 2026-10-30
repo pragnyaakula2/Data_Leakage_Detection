@@ -1,0 +1,512 @@
+{
+  "dataset": "Adult Income",
+  "source": "OpenML adult (version 2)",
+  "split_sizes": {
+    "train": 29274,
+    "validation": 9758,
+    "test": 9758
+  },
+  "n_features": 13,
+  "feature_names": [
+    "workclass_freq",
+    "marital_status_freq",
+    "occupation_freq",
+    "relationship_freq",
+    "race_freq",
+    "sex_freq",
+    "native_country_freq",
+    "age",
+    "fnlwgt",
+    "education_num",
+    "capital_gain",
+    "capital_loss",
+    "hours_per_week"
+  ],
+  "detector_config": {
+    "target": {
+      "mi_subsample": 20000,
+      "top_k": 5,
+      "permutation_rows": 4000,
+      "permutation_repeats": 3,
+      "permutation_seed_offset": 17,
+      "surrogate_rows": 20000,
+      "threshold": 0.65,
+      "seed_offset": 0,
+      "surrogate_early_stopping": null
+    },
+    "contamination": {
+      "threshold": 0.5,
+      "decimals": 6,
+      "near_duplicate_quantile": 0.05,
+      "exact_excess_scale": 0.02,
+      "near_excess_scale": 0.05,
+      "significance_level": 0.01
+    },
+    "temporal": {
+      "threshold": 0.5,
+      "overlap_scale": 0.05,
+      "auc_delta_scale": 0.05,
+      "overlap_weight": 0.7,
+      "auc_delta_weight": 0.3,
+      "max_probe_rows": 20000,
+      "seed": 0
+    },
+    "preprocessing": {
+      "threshold": 0.5,
+      "tolerance": 1e-07,
+      "scaler_min_unique": 20,
+      "frequency_max_unique": 10
+    }
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "model": "rf",
+      "test_auc": 0.9159889275404849,
+      "test_average_precision": 0.8034383741041482,
+      "jackfruit": {
+        "target": {
+          "score": 0.11820676346586485,
+          "flag": false,
+          "evidence": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "capital_gain",
+                "mi": 0.08385677846370676,
+                "mi_z": 1.1915246773825365,
+                "single_feature_strength": 0.6092791846148383,
+                "ablation_drop": 0.02622218280763411,
+                "permutation_share": 0.2314138248105626,
+                "score": 0.11820676346586485
+              },
+              {
+                "feature": "relationship_freq",
+                "mi": 0.11542400197746243,
+                "mi_z": 2.0472253917267564,
+                "single_feature_strength": 0.7755315754089358,
+                "ablation_drop": 0.0008990110731873502,
+                "permutation_share": 0.06948219043847698,
+                "score": 0.05805003469911022
+              },
+              {
+                "feature": "marital_status_freq",
+                "mi": 0.10954506018386094,
+                "mi_z": 1.8878634291461465,
+                "single_feature_strength": 0.7672513186823368,
+                "ablation_drop": 0.0015150864767624617,
+                "permutation_share": 0.23212499916103527,
+                "score": 0.054355196285013146
+              },
+              {
+                "feature": "education_num",
+                "mi": 0.0647831402695398,
+                "mi_z": 0.6744907411930036,
+                "single_feature_strength": 0.7193654917298347,
+                "ablation_drop": 0.009034578319625286,
+                "permutation_share": 0.1687550421831901,
+                "score": 0.036138313278501144
+              },
+              {
+                "feature": "occupation_freq",
+                "mi": 0.06414255266937774,
+                "mi_z": 0.6571261710457476,
+                "single_feature_strength": 0.7092338222915036,
+                "ablation_drop": 0.004667382863458247,
+                "permutation_share": 0.05058653762257257,
+                "score": 0.018669531453832988
+              },
+              {
+                "feature": "workclass_freq",
+                "mi": 0.01442362165961315,
+                "mi_z": -0.6906174708031291,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.006093709100427116,
+                "score": 0.0
+              },
+              {
+                "feature": "race_freq",
+                "mi": 0.00618476044267743,
+                "mi_z": -0.9139503662553594,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.002845502808856413,
+                "score": 0.0
+              },
+              {
+                "feature": "sex_freq",
+                "mi": 0.02623132681267315,
+                "mi_z": -0.37054301985128874,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.007376722396353692,
+                "score": 0.0
+              },
+              {
+                "feature": "native_country_freq",
+                "mi": 0.0021075962956456085,
+                "mi_z": -1.0244710863178474,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.003124442087883129,
+                "score": 0.0
+              },
+              {
+                "feature": "age",
+                "mi": 0.0611463870514426,
+                "mi_z": 0.5759083516057993,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.10452464209728002,
+                "score": 0.0
+              },
+              {
+                "feature": "fnlwgt",
+                "mi": 0.01913081892950852,
+                "mi_z": -0.5630182834798152,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "capital_loss",
+                "mi": 0.03653484893702208,
+                "mi_z": -0.09124283881937457,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.06028336901733599,
+                "score": 0.0
+              },
+              {
+                "feature": "hours_per_week",
+                "mi": 0.03990084248915804,
+                "mi_z": 0.0,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.06338901827602623,
+                "score": 0.0
+              }
+            ]
+          },
+          "signals": {
+            "mi_z_max": 2.0472253917267564,
+            "single_feature_strength_max": 0.7755315754089358,
+            "ablation_drop_max": 0.02622218280763411,
+            "permutation_share_max": 0.23212499916103527
+          }
+        },
+        "contamination": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0007173601147776184,
+            "exact_train_baseline": 0.0008881601421056228,
+            "exact_excess": 0.0,
+            "exact_p_value": 0.7612707866445172,
+            "near_excess": 0.0,
+            "near_p_value": 0.87604042464001,
+            "near_distance_threshold": 0.047965289447963876
+          },
+          "signals": {
+            "exact_score": 0.0,
+            "near_score": 0.0,
+            "memorization_gap": 0.0,
+            "memorization_score": 0.0
+          }
+        },
+        "temporal": {
+          "score": null,
+          "flag": false,
+          "evidence": {
+            "abstained": "timestamps not provided"
+          },
+          "signals": {}
+        },
+        "preprocessing": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "scaler": {
+              "native_country_freq": "neither",
+              "age": "train-consistent",
+              "fnlwgt": "train-consistent",
+              "capital_gain": "train-consistent",
+              "capital_loss": "train-consistent",
+              "hours_per_week": "train-consistent"
+            },
+            "imputation": {
+              "workclass_freq": {
+                "spike_share": 0.6931065108970418,
+                "verdict": "neither"
+              },
+              "marital_status_freq": {
+                "spike_share": 0.4599986335997814,
+                "verdict": "neither"
+              },
+              "occupation_freq": {
+                "spike_share": 0.12680194028831043,
+                "verdict": "neither"
+              },
+              "relationship_freq": {
+                "spike_share": 0.4062991050078568,
+                "verdict": "neither"
+              },
+              "sex_freq": {
+                "spike_share": 0.6685454669672747,
+                "verdict": "neither"
+              },
+              "age": {
+                "spike_share": 0.04977112796338047,
+                "verdict": "train-consistent"
+              },
+              "fnlwgt": {
+                "spike_share": 0.04867800778848125,
+                "verdict": "train-consistent"
+              },
+              "education_num": {
+                "spike_share": 0.32223133155701306,
+                "verdict": "neither"
+              },
+              "hours_per_week": {
+                "spike_share": 0.468333674933388,
+                "verdict": "neither"
+              }
+            },
+            "encoding": {
+              "workclass_freq": "train-consistent",
+              "marital_status_freq": "neither",
+              "relationship_freq": "train-consistent",
+              "race_freq": "train-consistent",
+              "sex_freq": "train-consistent"
+            }
+          },
+          "signals": {
+            "scaler_fingerprint": 0.0,
+            "imputation_fingerprint": 0.0,
+            "encoding_fingerprint": 0.0
+          }
+        },
+        "model_signals": {
+          "train_auc": 0.9914736072709059,
+          "test_auc": 0.9159889275404849,
+          "train_test_auc_gap": 0.07548467973042106,
+          "train_test_confidence_gap": 0.014704333865403374
+        },
+        "verdict": "clean",
+        "scores": {
+          "target": 0.11820676346586485,
+          "contamination": 0.0,
+          "temporal": null,
+          "preprocessing": 0.0
+        },
+        "flags": {
+          "target": false,
+          "contamination": false,
+          "temporal": false,
+          "preprocessing": false
+        },
+        "evidence": {
+          "target": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "capital_gain",
+                "mi": 0.08385677846370676,
+                "mi_z": 1.1915246773825365,
+                "single_feature_strength": 0.6092791846148383,
+                "ablation_drop": 0.02622218280763411,
+                "permutation_share": 0.2314138248105626,
+                "score": 0.11820676346586485
+              },
+              {
+                "feature": "relationship_freq",
+                "mi": 0.11542400197746243,
+                "mi_z": 2.0472253917267564,
+                "single_feature_strength": 0.7755315754089358,
+                "ablation_drop": 0.0008990110731873502,
+                "permutation_share": 0.06948219043847698,
+                "score": 0.05805003469911022
+              },
+              {
+                "feature": "marital_status_freq",
+                "mi": 0.10954506018386094,
+                "mi_z": 1.8878634291461465,
+                "single_feature_strength": 0.7672513186823368,
+                "ablation_drop": 0.0015150864767624617,
+                "permutation_share": 0.23212499916103527,
+                "score": 0.054355196285013146
+              },
+              {
+                "feature": "education_num",
+                "mi": 0.0647831402695398,
+                "mi_z": 0.6744907411930036,
+                "single_feature_strength": 0.7193654917298347,
+                "ablation_drop": 0.009034578319625286,
+                "permutation_share": 0.1687550421831901,
+                "score": 0.036138313278501144
+              },
+              {
+                "feature": "occupation_freq",
+                "mi": 0.06414255266937774,
+                "mi_z": 0.6571261710457476,
+                "single_feature_strength": 0.7092338222915036,
+                "ablation_drop": 0.004667382863458247,
+                "permutation_share": 0.05058653762257257,
+                "score": 0.018669531453832988
+              },
+              {
+                "feature": "workclass_freq",
+                "mi": 0.01442362165961315,
+                "mi_z": -0.6906174708031291,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.006093709100427116,
+                "score": 0.0
+              },
+              {
+                "feature": "race_freq",
+                "mi": 0.00618476044267743,
+                "mi_z": -0.9139503662553594,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.002845502808856413,
+                "score": 0.0
+              },
+              {
+                "feature": "sex_freq",
+                "mi": 0.02623132681267315,
+                "mi_z": -0.37054301985128874,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.007376722396353692,
+                "score": 0.0
+              },
+              {
+                "feature": "native_country_freq",
+                "mi": 0.0021075962956456085,
+                "mi_z": -1.0244710863178474,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.003124442087883129,
+                "score": 0.0
+              },
+              {
+                "feature": "age",
+                "mi": 0.0611463870514426,
+                "mi_z": 0.5759083516057993,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.10452464209728002,
+                "score": 0.0
+              },
+              {
+                "feature": "fnlwgt",
+                "mi": 0.01913081892950852,
+                "mi_z": -0.5630182834798152,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "capital_loss",
+                "mi": 0.03653484893702208,
+                "mi_z": -0.09124283881937457,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.06028336901733599,
+                "score": 0.0
+              },
+              {
+                "feature": "hours_per_week",
+                "mi": 0.03990084248915804,
+                "mi_z": 0.0,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.06338901827602623,
+                "score": 0.0
+              }
+            ]
+          },
+          "contamination": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0007173601147776184,
+            "exact_train_baseline": 0.0008881601421056228,
+            "exact_excess": 0.0,
+            "exact_p_value": 0.7612707866445172,
+            "near_excess": 0.0,
+            "near_p_value": 0.87604042464001,
+            "near_distance_threshold": 0.047965289447963876
+          },
+          "temporal": {
+            "abstained": "timestamps not provided"
+          },
+          "preprocessing": {
+            "scaler": {
+              "native_country_freq": "neither",
+              "age": "train-consistent",
+              "fnlwgt": "train-consistent",
+              "capital_gain": "train-consistent",
+              "capital_loss": "train-consistent",
+              "hours_per_week": "train-consistent"
+            },
+            "imputation": {
+              "workclass_freq": {
+                "spike_share": 0.6931065108970418,
+                "verdict": "neither"
+              },
+              "marital_status_freq": {
+                "spike_share": 0.4599986335997814,
+                "verdict": "neither"
+              },
+              "occupation_freq": {
+                "spike_share": 0.12680194028831043,
+                "verdict": "neither"
+              },
+              "relationship_freq": {
+                "spike_share": 0.4062991050078568,
+                "verdict": "neither"
+              },
+              "sex_freq": {
+                "spike_share": 0.6685454669672747,
+                "verdict": "neither"
+              },
+              "age": {
+                "spike_share": 0.04977112796338047,
+                "verdict": "train-consistent"
+              },
+              "fnlwgt": {
+                "spike_share": 0.04867800778848125,
+                "verdict": "train-consistent"
+              },
+              "education_num": {
+                "spike_share": 0.32223133155701306,
+                "verdict": "neither"
+              },
+              "hours_per_week": {
+                "spike_share": 0.468333674933388,
+                "verdict": "neither"
+              }
+            },
+            "encoding": {
+              "workclass_freq": "train-consistent",
+              "marital_status_freq": "neither",
+              "relationship_freq": "train-consistent",
+              "race_freq": "train-consistent",
+              "sex_freq": "train-consistent"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

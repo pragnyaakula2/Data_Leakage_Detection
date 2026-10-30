@@ -1,0 +1,826 @@
+{
+  "dataset": "Credit Card Fraud",
+  "source": "/Users/pragnyaakula/Downloads/ADA_mini_project /data/raw/creditcard.csv",
+  "split_sizes": {
+    "train": 24284,
+    "validation": 4047,
+    "test": 6071
+  },
+  "n_features": 29,
+  "feature_names": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "detector_config": {
+    "target": {
+      "mi_subsample": 20000,
+      "top_k": 5,
+      "permutation_rows": 4000,
+      "permutation_repeats": 3,
+      "permutation_seed_offset": 17,
+      "surrogate_rows": 20000,
+      "threshold": 0.65,
+      "seed_offset": 0,
+      "surrogate_early_stopping": null
+    },
+    "contamination": {
+      "threshold": 0.5,
+      "decimals": 6,
+      "near_duplicate_quantile": 0.05,
+      "exact_excess_scale": 0.02,
+      "near_excess_scale": 0.05,
+      "significance_level": 0.01
+    },
+    "temporal": {
+      "threshold": 0.5,
+      "overlap_scale": 0.05,
+      "auc_delta_scale": 0.05,
+      "overlap_weight": 0.7,
+      "auc_delta_weight": 0.3,
+      "max_probe_rows": 20000,
+      "seed": 0
+    },
+    "preprocessing": {
+      "threshold": 0.5,
+      "tolerance": 1e-07,
+      "scaler_min_unique": 20,
+      "frequency_max_unique": 10
+    }
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "model": "rf",
+      "test_auc": 0.979090108889012,
+      "test_average_precision": 0.9007622074875326,
+      "jackfruit": {
+        "target": {
+          "score": 0.2763059395162051,
+          "flag": false,
+          "evidence": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "V14",
+                "mi": 0.05314186688638911,
+                "mi_z": 1.5925654098944793,
+                "single_feature_strength": 0.9560075666519725,
+                "ablation_drop": -0.007646331195786726,
+                "permutation_share": 0.396412608115181,
+                "score": 0.2763059395162051
+              },
+              {
+                "feature": "V12",
+                "mi": 0.049400284734207656,
+                "mi_z": 1.410886825219385,
+                "single_feature_strength": 0.9394850663379433,
+                "ablation_drop": -0.006563566824073552,
+                "permutation_share": 0.035990015673072,
+                "score": 0.20513126383771688
+              },
+              {
+                "feature": "V11",
+                "mi": 0.04590747054334454,
+                "mi_z": 1.2412875720373795,
+                "single_feature_strength": 0.9185314118516856,
+                "ablation_drop": -0.0019992825438328587,
+                "permutation_share": 0.007430196784116417,
+                "score": 0.1534904949613546
+              },
+              {
+                "feature": "V10",
+                "mi": 0.05107256248823944,
+                "mi_z": 1.4920869815112907,
+                "single_feature_strength": 0.9091603273110894,
+                "ablation_drop": -0.01265296701789087,
+                "permutation_share": 0.0271086085795551,
+                "score": 0.14873462932499754
+              },
+              {
+                "feature": "V17",
+                "mi": 0.05536035760307567,
+                "mi_z": 1.700287821732332,
+                "single_feature_strength": 0.8906985530840652,
+                "ablation_drop": -0.005353538856236684,
+                "permutation_share": 0.03857317002380226,
+                "score": 0.12173853390444336
+              },
+              {
+                "feature": "V16",
+                "mi": 0.043227091116332605,
+                "mi_z": 1.1111374053738325,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.02220351773378719,
+                "score": 0.00800935939071701
+              },
+              {
+                "feature": "V1",
+                "mi": 0.018139962608241356,
+                "mi_z": -0.10700877331020368,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.11583560689615469,
+                "score": 0.0
+              },
+              {
+                "feature": "V2",
+                "mi": 0.027172696455552425,
+                "mi_z": 0.3315902562926908,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.014889417774422334,
+                "score": 0.0
+              },
+              {
+                "feature": "V3",
+                "mi": 0.0374880122344351,
+                "mi_z": 0.8324671300214775,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0350322168688691,
+                "score": 0.0
+              },
+              {
+                "feature": "V4",
+                "mi": 0.03907598271830792,
+                "mi_z": 0.9095736101899367,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.012045045568003128,
+                "score": 0.0
+              },
+              {
+                "feature": "V5",
+                "mi": 0.021531861185663748,
+                "mi_z": 0.05769035872630193,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V6",
+                "mi": 0.018452905443299028,
+                "mi_z": -0.09181332682659749,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.005311429732395153,
+                "score": 0.0
+              },
+              {
+                "feature": "V7",
+                "mi": 0.03423456498805366,
+                "mi_z": 0.6744907267256034,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V8",
+                "mi": 0.01616164673931486,
+                "mi_z": -0.20306910620902668,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.011783827712311427,
+                "score": 0.0
+              },
+              {
+                "feature": "V9",
+                "mi": 0.030285811424902498,
+                "mi_z": 0.4827525984672752,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.006994833691296917,
+                "score": 0.0
+              },
+              {
+                "feature": "V13",
+                "mi": 0.0005221736059247695,
+                "mi_z": -0.9624690681427448,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.1074476113078326,
+                "score": 0.0
+              },
+              {
+                "feature": "V15",
+                "mi": 0.001685960258079211,
+                "mi_z": -0.9059595213180379,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.005891913856154794,
+                "score": 0.0
+              },
+              {
+                "feature": "V18",
+                "mi": 0.032511647607676,
+                "mi_z": 0.5908316813143896,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V19",
+                "mi": 0.009798243985127852,
+                "mi_z": -0.5120544389042492,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.014628199918731554,
+                "score": 0.0
+              },
+              {
+                "feature": "V20",
+                "mi": 0.008578937900965644,
+                "mi_z": -0.5712598217199566,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V21",
+                "mi": 0.023736834566280174,
+                "mi_z": 0.1647564144062743,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V22",
+                "mi": 0.001762516919105117,
+                "mi_z": -0.9022421885809956,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0047309456086364315,
+                "score": 0.0
+              },
+              {
+                "feature": "V23",
+                "mi": 0.006709665879935822,
+                "mi_z": -0.6620253538773757,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.03436466012654464,
+                "score": 0.0
+              },
+              {
+                "feature": "V24",
+                "mi": 0.0026988195054625796,
+                "mi_z": -0.856778499211546,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.043565333488128556,
+                "score": 0.0
+              },
+              {
+                "feature": "V25",
+                "mi": 0.0037756792651223448,
+                "mi_z": -0.8044898285179243,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00853311661925854,
+                "score": 0.0
+              },
+              {
+                "feature": "V26",
+                "mi": 0.0023101927030282354,
+                "mi_z": -0.8756489033778462,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.003221686886861548,
+                "score": 0.0
+              },
+              {
+                "feature": "V27",
+                "mi": 0.020343756286292702,
+                "mi_z": 0.0,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00815580193881528,
+                "score": 0.0
+              },
+              {
+                "feature": "V28",
+                "mi": 0.015986004424214828,
+                "mi_z": -0.21159770344905418,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.007633366227433718,
+                "score": 0.0
+              },
+              {
+                "feature": "Amount",
+                "mi": 0.013394501798750569,
+                "mi_z": -0.337432312987598,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.032216868868635715,
+                "score": 0.0
+              }
+            ]
+          },
+          "signals": {
+            "mi_z_max": 1.700287821732332,
+            "single_feature_strength_max": 0.9560075666519725,
+            "ablation_drop_max": 0.0,
+            "permutation_share_max": 0.396412608115181
+          }
+        },
+        "contamination": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0,
+            "exact_train_baseline": 0.0,
+            "exact_excess": 0.0,
+            "exact_p_value": 1.0,
+            "near_excess": 0.0,
+            "near_p_value": 1.0,
+            "near_distance_threshold": 0.09268668504184888
+          },
+          "signals": {
+            "exact_score": 0.0,
+            "near_score": 0.0,
+            "memorization_gap": 0.0,
+            "memorization_score": 0.0
+          }
+        },
+        "temporal": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "train_at_or_after_test_start_fraction": 0.0,
+            "train_after_test_end_fraction": 0.0,
+            "test_start": 132641.0,
+            "test_end": 150861.0,
+            "auc_given_split": null,
+            "auc_chronological": null,
+            "auc_delta": 0.0
+          },
+          "signals": {
+            "overlap_fraction": 0.0,
+            "future_fraction": 0.0,
+            "chronological_auc_delta": 0.0
+          }
+        },
+        "preprocessing": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "scaler": {
+              "V1": "train-consistent",
+              "V2": "train-consistent",
+              "V3": "train-consistent",
+              "V4": "train-consistent",
+              "V5": "train-consistent",
+              "V6": "train-consistent",
+              "V7": "train-consistent",
+              "V8": "train-consistent",
+              "V9": "train-consistent",
+              "V10": "train-consistent",
+              "V11": "train-consistent",
+              "V12": "train-consistent",
+              "V13": "train-consistent",
+              "V14": "train-consistent",
+              "V15": "train-consistent",
+              "V16": "train-consistent",
+              "V17": "train-consistent",
+              "V18": "train-consistent",
+              "V19": "train-consistent",
+              "V20": "train-consistent",
+              "V21": "train-consistent",
+              "V22": "train-consistent",
+              "V23": "train-consistent",
+              "V24": "train-consistent",
+              "V25": "train-consistent",
+              "V26": "train-consistent",
+              "V27": "train-consistent",
+              "V28": "train-consistent",
+              "Amount": "train-consistent"
+            },
+            "imputation": {
+              "V1": {
+                "spike_share": 0.05106242793608961,
+                "verdict": "train-consistent"
+              },
+              "V5": {
+                "spike_share": 0.04986822599242299,
+                "verdict": "train-consistent"
+              },
+              "V8": {
+                "spike_share": 0.04834458902981387,
+                "verdict": "train-consistent"
+              },
+              "Amount": {
+                "spike_share": 0.04978586723768737,
+                "verdict": "neither"
+              }
+            },
+            "encoding": {}
+          },
+          "signals": {
+            "scaler_fingerprint": 0.0,
+            "imputation_fingerprint": 0.0,
+            "encoding_fingerprint": 0.0
+          }
+        },
+        "model_signals": {
+          "train_auc": 0.9999753302449731,
+          "test_auc": 0.979090108889012,
+          "train_test_auc_gap": 0.020885221355961048,
+          "train_test_confidence_gap": 0.0026214378006401695
+        },
+        "verdict": "clean",
+        "scores": {
+          "target": 0.2763059395162051,
+          "contamination": 0.0,
+          "temporal": 0.0,
+          "preprocessing": 0.0
+        },
+        "flags": {
+          "target": false,
+          "contamination": false,
+          "temporal": false,
+          "preprocessing": false
+        },
+        "evidence": {
+          "target": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "V14",
+                "mi": 0.05314186688638911,
+                "mi_z": 1.5925654098944793,
+                "single_feature_strength": 0.9560075666519725,
+                "ablation_drop": -0.007646331195786726,
+                "permutation_share": 0.396412608115181,
+                "score": 0.2763059395162051
+              },
+              {
+                "feature": "V12",
+                "mi": 0.049400284734207656,
+                "mi_z": 1.410886825219385,
+                "single_feature_strength": 0.9394850663379433,
+                "ablation_drop": -0.006563566824073552,
+                "permutation_share": 0.035990015673072,
+                "score": 0.20513126383771688
+              },
+              {
+                "feature": "V11",
+                "mi": 0.04590747054334454,
+                "mi_z": 1.2412875720373795,
+                "single_feature_strength": 0.9185314118516856,
+                "ablation_drop": -0.0019992825438328587,
+                "permutation_share": 0.007430196784116417,
+                "score": 0.1534904949613546
+              },
+              {
+                "feature": "V10",
+                "mi": 0.05107256248823944,
+                "mi_z": 1.4920869815112907,
+                "single_feature_strength": 0.9091603273110894,
+                "ablation_drop": -0.01265296701789087,
+                "permutation_share": 0.0271086085795551,
+                "score": 0.14873462932499754
+              },
+              {
+                "feature": "V17",
+                "mi": 0.05536035760307567,
+                "mi_z": 1.700287821732332,
+                "single_feature_strength": 0.8906985530840652,
+                "ablation_drop": -0.005353538856236684,
+                "permutation_share": 0.03857317002380226,
+                "score": 0.12173853390444336
+              },
+              {
+                "feature": "V16",
+                "mi": 0.043227091116332605,
+                "mi_z": 1.1111374053738325,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.02220351773378719,
+                "score": 0.00800935939071701
+              },
+              {
+                "feature": "V1",
+                "mi": 0.018139962608241356,
+                "mi_z": -0.10700877331020368,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.11583560689615469,
+                "score": 0.0
+              },
+              {
+                "feature": "V2",
+                "mi": 0.027172696455552425,
+                "mi_z": 0.3315902562926908,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.014889417774422334,
+                "score": 0.0
+              },
+              {
+                "feature": "V3",
+                "mi": 0.0374880122344351,
+                "mi_z": 0.8324671300214775,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0350322168688691,
+                "score": 0.0
+              },
+              {
+                "feature": "V4",
+                "mi": 0.03907598271830792,
+                "mi_z": 0.9095736101899367,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.012045045568003128,
+                "score": 0.0
+              },
+              {
+                "feature": "V5",
+                "mi": 0.021531861185663748,
+                "mi_z": 0.05769035872630193,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V6",
+                "mi": 0.018452905443299028,
+                "mi_z": -0.09181332682659749,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.005311429732395153,
+                "score": 0.0
+              },
+              {
+                "feature": "V7",
+                "mi": 0.03423456498805366,
+                "mi_z": 0.6744907267256034,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V8",
+                "mi": 0.01616164673931486,
+                "mi_z": -0.20306910620902668,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.011783827712311427,
+                "score": 0.0
+              },
+              {
+                "feature": "V9",
+                "mi": 0.030285811424902498,
+                "mi_z": 0.4827525984672752,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.006994833691296917,
+                "score": 0.0
+              },
+              {
+                "feature": "V13",
+                "mi": 0.0005221736059247695,
+                "mi_z": -0.9624690681427448,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.1074476113078326,
+                "score": 0.0
+              },
+              {
+                "feature": "V15",
+                "mi": 0.001685960258079211,
+                "mi_z": -0.9059595213180379,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.005891913856154794,
+                "score": 0.0
+              },
+              {
+                "feature": "V18",
+                "mi": 0.032511647607676,
+                "mi_z": 0.5908316813143896,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V19",
+                "mi": 0.009798243985127852,
+                "mi_z": -0.5120544389042492,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.014628199918731554,
+                "score": 0.0
+              },
+              {
+                "feature": "V20",
+                "mi": 0.008578937900965644,
+                "mi_z": -0.5712598217199566,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V21",
+                "mi": 0.023736834566280174,
+                "mi_z": 0.1647564144062743,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0,
+                "score": 0.0
+              },
+              {
+                "feature": "V22",
+                "mi": 0.001762516919105117,
+                "mi_z": -0.9022421885809956,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0047309456086364315,
+                "score": 0.0
+              },
+              {
+                "feature": "V23",
+                "mi": 0.006709665879935822,
+                "mi_z": -0.6620253538773757,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.03436466012654464,
+                "score": 0.0
+              },
+              {
+                "feature": "V24",
+                "mi": 0.0026988195054625796,
+                "mi_z": -0.856778499211546,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.043565333488128556,
+                "score": 0.0
+              },
+              {
+                "feature": "V25",
+                "mi": 0.0037756792651223448,
+                "mi_z": -0.8044898285179243,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00853311661925854,
+                "score": 0.0
+              },
+              {
+                "feature": "V26",
+                "mi": 0.0023101927030282354,
+                "mi_z": -0.8756489033778462,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.003221686886861548,
+                "score": 0.0
+              },
+              {
+                "feature": "V27",
+                "mi": 0.020343756286292702,
+                "mi_z": 0.0,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.00815580193881528,
+                "score": 0.0
+              },
+              {
+                "feature": "V28",
+                "mi": 0.015986004424214828,
+                "mi_z": -0.21159770344905418,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.007633366227433718,
+                "score": 0.0
+              },
+              {
+                "feature": "Amount",
+                "mi": 0.013394501798750569,
+                "mi_z": -0.337432312987598,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.032216868868635715,
+                "score": 0.0
+              }
+            ]
+          },
+          "contamination": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0,
+            "exact_train_baseline": 0.0,
+            "exact_excess": 0.0,
+            "exact_p_value": 1.0,
+            "near_excess": 0.0,
+            "near_p_value": 1.0,
+            "near_distance_threshold": 0.09268668504184888
+          },
+          "temporal": {
+            "train_at_or_after_test_start_fraction": 0.0,
+            "train_after_test_end_fraction": 0.0,
+            "test_start": 132641.0,
+            "test_end": 150861.0,
+            "auc_given_split": null,
+            "auc_chronological": null,
+            "auc_delta": 0.0
+          },
+          "preprocessing": {
+            "scaler": {
+              "V1": "train-consistent",
+              "V2": "train-consistent",
+              "V3": "train-consistent",
+              "V4": "train-consistent",
+              "V5": "train-consistent",
+              "V6": "train-consistent",
+              "V7": "train-consistent",
+              "V8": "train-consistent",
+              "V9": "train-consistent",
+              "V10": "train-consistent",
+              "V11": "train-consistent",
+              "V12": "train-consistent",
+              "V13": "train-consistent",
+              "V14": "train-consistent",
+              "V15": "train-consistent",
+              "V16": "train-consistent",
+              "V17": "train-consistent",
+              "V18": "train-consistent",
+              "V19": "train-consistent",
+              "V20": "train-consistent",
+              "V21": "train-consistent",
+              "V22": "train-consistent",
+              "V23": "train-consistent",
+              "V24": "train-consistent",
+              "V25": "train-consistent",
+              "V26": "train-consistent",
+              "V27": "train-consistent",
+              "V28": "train-consistent",
+              "Amount": "train-consistent"
+            },
+            "imputation": {
+              "V1": {
+                "spike_share": 0.05106242793608961,
+                "verdict": "train-consistent"
+              },
+              "V5": {
+                "spike_share": 0.04986822599242299,
+                "verdict": "train-consistent"
+              },
+              "V8": {
+                "spike_share": 0.04834458902981387,
+                "verdict": "train-consistent"
+              },
+              "Amount": {
+                "spike_share": 0.04978586723768737,
+                "verdict": "neither"
+              }
+            },
+            "encoding": {}
+          }
+        }
+      }
+    }
+  ]
+}

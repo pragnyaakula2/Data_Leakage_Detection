@@ -1,0 +1,377 @@
+{
+  "dataset": "California Housing",
+  "source": "/Users/pragnyaakula/Downloads/ADA_mini_project /data/raw/california_housing.csv",
+  "split_sizes": {
+    "train": 12384,
+    "validation": 4128,
+    "test": 4128
+  },
+  "n_features": 8,
+  "feature_names": [
+    "longitude",
+    "latitude",
+    "housing_age",
+    "rooms",
+    "bedrooms",
+    "population",
+    "households_or_occupancy",
+    "median_income"
+  ],
+  "detector_config": {
+    "target": {
+      "mi_subsample": 20000,
+      "top_k": 5,
+      "permutation_rows": 4000,
+      "permutation_repeats": 3,
+      "permutation_seed_offset": 17,
+      "surrogate_rows": 20000,
+      "threshold": 0.65,
+      "seed_offset": 0,
+      "surrogate_early_stopping": null
+    },
+    "contamination": {
+      "threshold": 0.5,
+      "decimals": 6,
+      "near_duplicate_quantile": 0.05,
+      "exact_excess_scale": 0.02,
+      "near_excess_scale": 0.05,
+      "significance_level": 0.01
+    },
+    "temporal": {
+      "threshold": 0.5,
+      "overlap_scale": 0.05,
+      "auc_delta_scale": 0.05,
+      "overlap_weight": 0.7,
+      "auc_delta_weight": 0.3,
+      "max_probe_rows": 20000,
+      "seed": 0
+    },
+    "preprocessing": {
+      "threshold": 0.5,
+      "tolerance": 1e-07,
+      "scaler_min_unique": 20,
+      "frequency_max_unique": 10
+    }
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "model": "rf",
+      "test_auc": 0.955073419724208,
+      "test_average_precision": 0.9568473836141267,
+      "jackfruit": {
+        "target": {
+          "score": 0.19664733250067665,
+          "flag": false,
+          "evidence": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "longitude",
+                "mi": 0.17485339998356708,
+                "mi_z": 2.602047166873144,
+                "single_feature_strength": 0.7643183708833435,
+                "ablation_drop": 0.030991794670408357,
+                "permutation_share": 0.24310907133552684,
+                "score": 0.19664733250067665
+              },
+              {
+                "feature": "latitude",
+                "mi": 0.1439344186362128,
+                "mi_z": 2.014127481519176,
+                "single_feature_strength": 0.6951626596267488,
+                "ablation_drop": 0.02585012587044544,
+                "permutation_share": 0.29088039998017357,
+                "score": 0.15661572063809917
+              },
+              {
+                "feature": "median_income",
+                "mi": 0.19466171684430034,
+                "mi_z": 2.978699272106569,
+                "single_feature_strength": 0.8261881396197549,
+                "ablation_drop": 0.0022092621376904598,
+                "permutation_share": 0.3279197878715801,
+                "score": 0.10016765028771428
+              },
+              {
+                "feature": "households_or_occupancy",
+                "mi": 0.0399028610998291,
+                "mi_z": 0.03598338011566879,
+                "single_feature_strength": 0.6322199816376471,
+                "ablation_drop": 0.0064619836522062934,
+                "permutation_share": 0.09782670711351228,
+                "score": 0.025847934608825174
+              },
+              {
+                "feature": "rooms",
+                "mi": 0.03611809428107127,
+                "mi_z": -0.03598338011566879,
+                "single_feature_strength": 0.6184481716650192,
+                "ablation_drop": 0.001881178636185088,
+                "permutation_share": 0.02052034365317468,
+                "score": 0.007524714544740352
+              },
+              {
+                "feature": "housing_age",
+                "mi": 0.005029589878992713,
+                "mi_z": -0.6271265203394483,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.016096128178511897,
+                "score": 0.0
+              },
+              {
+                "feature": "bedrooms",
+                "mi": 0.006731922447952288,
+                "mi_z": -0.5947569277882963,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0009323944073809644,
+                "score": 0.0
+              },
+              {
+                "feature": "population",
+                "mi": 4.7774619702734e-05,
+                "mi_z": -0.7218549729630657,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0027151674601395013,
+                "score": 0.0
+              }
+            ]
+          },
+          "signals": {
+            "mi_z_max": 2.978699272106569,
+            "single_feature_strength_max": 0.8261881396197549,
+            "ablation_drop_max": 0.030991794670408357,
+            "permutation_share_max": 0.3279197878715801
+          }
+        },
+        "contamination": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0,
+            "exact_train_baseline": 0.0,
+            "exact_excess": 0.0,
+            "exact_p_value": 1.0,
+            "near_excess": 0.0,
+            "near_p_value": 0.9890813595910095,
+            "near_distance_threshold": 0.15188799977663592
+          },
+          "signals": {
+            "exact_score": 0.0,
+            "near_score": 0.0,
+            "memorization_gap": 0.0,
+            "memorization_score": 0.0
+          }
+        },
+        "temporal": {
+          "score": null,
+          "flag": false,
+          "evidence": {
+            "abstained": "timestamps not provided"
+          },
+          "signals": {}
+        },
+        "preprocessing": {
+          "score": 0.0,
+          "flag": false,
+          "evidence": {
+            "scaler": {
+              "longitude": "train-consistent",
+              "latitude": "train-consistent",
+              "housing_age": "train-consistent",
+              "rooms": "train-consistent",
+              "bedrooms": "train-consistent",
+              "population": "train-consistent",
+              "households_or_occupancy": "train-consistent",
+              "median_income": "train-consistent"
+            },
+            "imputation": {
+              "latitude": {
+                "spike_share": 0.011708656330749355,
+                "verdict": "neither"
+              },
+              "housing_age": {
+                "spike_share": 0.062177002583979325,
+                "verdict": "neither"
+              },
+              "rooms": {
+                "spike_share": 0.05062984496124031,
+                "verdict": "train-consistent"
+              },
+              "bedrooms": {
+                "spike_share": 0.04958010335917313,
+                "verdict": "train-consistent"
+              },
+              "population": {
+                "spike_share": 0.05006459948320414,
+                "verdict": "train-consistent"
+              }
+            },
+            "encoding": {}
+          },
+          "signals": {
+            "scaler_fingerprint": 0.0,
+            "imputation_fingerprint": 0.0,
+            "encoding_fingerprint": 0.0
+          }
+        },
+        "model_signals": {
+          "train_auc": 0.9997516226813901,
+          "test_auc": 0.9550735370924827,
+          "train_test_auc_gap": 0.0446780855889074,
+          "train_test_confidence_gap": 0.05916375249472394
+        },
+        "verdict": "clean",
+        "scores": {
+          "target": 0.19664733250067665,
+          "contamination": 0.0,
+          "temporal": null,
+          "preprocessing": 0.0
+        },
+        "flags": {
+          "target": false,
+          "contamination": false,
+          "temporal": false,
+          "preprocessing": false
+        },
+        "evidence": {
+          "target": {
+            "suspect_features": [],
+            "ranked_features": [
+              {
+                "feature": "longitude",
+                "mi": 0.17485339998356708,
+                "mi_z": 2.602047166873144,
+                "single_feature_strength": 0.7643183708833435,
+                "ablation_drop": 0.030991794670408357,
+                "permutation_share": 0.24310907133552684,
+                "score": 0.19664733250067665
+              },
+              {
+                "feature": "latitude",
+                "mi": 0.1439344186362128,
+                "mi_z": 2.014127481519176,
+                "single_feature_strength": 0.6951626596267488,
+                "ablation_drop": 0.02585012587044544,
+                "permutation_share": 0.29088039998017357,
+                "score": 0.15661572063809917
+              },
+              {
+                "feature": "median_income",
+                "mi": 0.19466171684430034,
+                "mi_z": 2.978699272106569,
+                "single_feature_strength": 0.8261881396197549,
+                "ablation_drop": 0.0022092621376904598,
+                "permutation_share": 0.3279197878715801,
+                "score": 0.10016765028771428
+              },
+              {
+                "feature": "households_or_occupancy",
+                "mi": 0.0399028610998291,
+                "mi_z": 0.03598338011566879,
+                "single_feature_strength": 0.6322199816376471,
+                "ablation_drop": 0.0064619836522062934,
+                "permutation_share": 0.09782670711351228,
+                "score": 0.025847934608825174
+              },
+              {
+                "feature": "rooms",
+                "mi": 0.03611809428107127,
+                "mi_z": -0.03598338011566879,
+                "single_feature_strength": 0.6184481716650192,
+                "ablation_drop": 0.001881178636185088,
+                "permutation_share": 0.02052034365317468,
+                "score": 0.007524714544740352
+              },
+              {
+                "feature": "housing_age",
+                "mi": 0.005029589878992713,
+                "mi_z": -0.6271265203394483,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.016096128178511897,
+                "score": 0.0
+              },
+              {
+                "feature": "bedrooms",
+                "mi": 0.006731922447952288,
+                "mi_z": -0.5947569277882963,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0009323944073809644,
+                "score": 0.0
+              },
+              {
+                "feature": "population",
+                "mi": 4.7774619702734e-05,
+                "mi_z": -0.7218549729630657,
+                "single_feature_strength": null,
+                "ablation_drop": 0.0,
+                "permutation_share": 0.0027151674601395013,
+                "score": 0.0
+              }
+            ]
+          },
+          "contamination": {
+            "exact_match_count": 0,
+            "near_match_count": 0,
+            "matched_test_row_ids": [],
+            "matched_train_row_ids": [],
+            "exact_overlap_rate": 0.0,
+            "exact_train_baseline": 0.0,
+            "exact_excess": 0.0,
+            "exact_p_value": 1.0,
+            "near_excess": 0.0,
+            "near_p_value": 0.9890813595910095,
+            "near_distance_threshold": 0.15188799977663592
+          },
+          "temporal": {
+            "abstained": "timestamps not provided"
+          },
+          "preprocessing": {
+            "scaler": {
+              "longitude": "train-consistent",
+              "latitude": "train-consistent",
+              "housing_age": "train-consistent",
+              "rooms": "train-consistent",
+              "bedrooms": "train-consistent",
+              "population": "train-consistent",
+              "households_or_occupancy": "train-consistent",
+              "median_income": "train-consistent"
+            },
+            "imputation": {
+              "latitude": {
+                "spike_share": 0.011708656330749355,
+                "verdict": "neither"
+              },
+              "housing_age": {
+                "spike_share": 0.062177002583979325,
+                "verdict": "neither"
+              },
+              "rooms": {
+                "spike_share": 0.05062984496124031,
+                "verdict": "train-consistent"
+              },
+              "bedrooms": {
+                "spike_share": 0.04958010335917313,
+                "verdict": "train-consistent"
+              },
+              "population": {
+                "spike_share": 0.05006459948320414,
+                "verdict": "train-consistent"
+              }
+            },
+            "encoding": {}
+          }
+        }
+      }
+    }
+  ]
+}

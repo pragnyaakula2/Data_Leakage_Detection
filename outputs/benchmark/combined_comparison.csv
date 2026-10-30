@@ -1,0 +1,5 @@
+dataset,seed,model,n_train,n_validation,n_test,n_features,test_auc,test_average_precision,verdict,score_target,flag_target,score_contamination,flag_contamination,score_temporal,flag_temporal,score_preprocessing,flag_preprocessing,report_file
+Adult Income,0,rf,29274,9758,9758,13,0.9159889275404849,0.8034383741041482,clean,0.11820676346586485,False,0.0,False,,False,0.0,False,adult_income.json
+Credit Card Fraud,0,rf,24284,4047,6071,29,0.979090108889012,0.9007622074875326,clean,0.2763059395162051,False,0.0,False,0.0,False,0.0,False,credit_card_fraud.json
+California Housing,0,rf,12384,4128,4128,8,0.955073419724208,0.9568473836141267,clean,0.19664733250067665,False,0.0,False,,False,0.0,False,california_housing.json
+Rossmann,0,rf,30000,8000,10000,17,0.8896869189777391,0.9189033333080416,clean,0.510205702171089,False,0.0,False,0.0,False,0.0,False,rossmann.json
